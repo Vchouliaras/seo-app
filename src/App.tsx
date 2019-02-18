@@ -12,7 +12,7 @@ import * as Cases from './routes'
 
 const PageNav = () => (
   <React.Fragment>
-    <Header> SEO for Single Page App </Header>
+    <Header> SEO for Single Page App - Version: {process.env.REACT_APP_VERSION}</Header>
     <Navigation>
       <Link to="/">Home</Link>
       <Link to="/case1">Case 1</Link>
