@@ -28,7 +28,7 @@ const Case1: React.SFC<ICase> = ({ location }) => {
       title={'Case 1 - Ajax Call'}
       pathname={location.pathname}
     >
-    <h1>Ajax Call with loader</h1>
+    <h1>Perform an Ajax call with a loader</h1>
     {
       posts.map(post => (
         <div key={post.id}>
