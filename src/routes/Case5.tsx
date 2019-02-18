@@ -24,11 +24,11 @@ const Case5: React.SFC<ICase> = ({ location }) => {
 
   return (
     <Content
-      title={`Case5 - Heavy HTML image`}
+      title={`Case5 - Heavy HTML images`}
       pathname={location.pathname}
     >
-      <h1> {'Contains a heavy image'} </h1>
-      <p> {'This html page contains a heavy image to check for bot timeouts'} </p>
+      <h1> {'Contains heavy images ~6MB in total'} </h1>
+      <p> {'This html page contains heavy images to check for bot timeouts'} </p>
       <Image src={Photo1} alt="Heavy photo" />
       <Image src={Photo2} alt="Heavy photo" />
       <Image src={Photo3} alt="Heavy photo" />
