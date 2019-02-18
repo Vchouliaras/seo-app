@@ -23,7 +23,7 @@ const Home: React.SFC<ICase> = ({ location }) => {
         <li> Case3 - CTA link </li>
         <li> Case4 - Redirect to not-found page </li>
         <li> Case5 - Heavy HTML with images </li>
-        <li> Case6 - Dummy image not in sitemap.xml </li>
+        <li> Case6 - Dummy page not in sitemap.xml </li>
       </List>
     </Content>
   )
