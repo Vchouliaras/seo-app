@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import { Header } from './components/Header'
 import { Link } from './components/Link'
@@ -20,6 +20,7 @@ const PageNav = () => (
       <Link to="/case3">Case 3</Link>
       <Link to="/case4">Case 4</Link>
       <Link to="/case5">Case 5</Link>
+      <Link to="/case6">Case 6</Link>
     </Navigation>
   </React.Fragment>
 )
@@ -40,7 +41,9 @@ const App = () => {
             <Route path='/case3' component={Cases.Case3} />
             <Route path='/case4' component={Cases.Case4} />
             <Route path='/case5' component={Cases.Case5} />
-            <Route component={Cases.NotFound} />
+            <Route path='/case6' component={Cases.Case6} />
+            <Route path='/not-found' component={Cases.NotFound} />
+            <Route render={() => <Redirect to="/not-found" /> } />
           </Switch>
         </HistoryContext.Provider>
       </React.Fragment>
