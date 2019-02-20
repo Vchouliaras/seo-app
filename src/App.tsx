@@ -1,4 +1,5 @@
 import * as React from 'react'
+import loadable from '@loadable/component'
 import styled from 'styled-components'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
@@ -30,24 +31,21 @@ const App = () => {
   const [history, setHistory] = React.useState([])
 
   return (
-    <BrowserRouter>
-      <React.Fragment>
-        <PageNav />
-        <HistoryContext.Provider value={[history, setHistory]}>
-          <Switch>
-            <Route exact path='/' component={Cases.Home} />
-            <Route path='/case1' component={Cases.Case1} />
-            <Route path='/case2' component={Cases.Case2} />
-            <Route path='/case3' component={Cases.Case3} />
-            <Route path='/case4' component={Cases.Case4} />
-            <Route path='/case5' component={Cases.Case5} />
-            <Route path='/case6' component={Cases.Case6} />
-            <Route path='/not-found' component={Cases.NotFound} />
-            <Route render={() => <Redirect to="/not-found" /> } />
-          </Switch>
-        </HistoryContext.Provider>
-      </React.Fragment>
-    </BrowserRouter>
+    <React.Fragment>
+      <PageNav />
+      <HistoryContext.Provider value={[history, setHistory]}>
+        <Switch>
+          <Route exact path='/' component={Cases.Home} />
+          <Route path='/case1' component={Cases.Case1} />
+          <Route path='/case2' component={Cases.Case2} />
+          <Route path='/case3' component={Cases.Case3} />
+          <Route path='/case4' component={Cases.Case4} />
+          <Route path='/case5' component={Cases.Case5} />
+          <Route path='/case6' component={Cases.Case6} />
+          <Route component={Cases.NotFound} />
+        </Switch>
+      </HistoryContext.Provider>
+    </React.Fragment>
   )
 }
 

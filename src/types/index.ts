@@ -25,6 +25,9 @@ export interface IContent {
 }
 
 export interface ICase {
+  staticContext?: {
+    status: number
+  },
   location: {
     pathname: string
   }
