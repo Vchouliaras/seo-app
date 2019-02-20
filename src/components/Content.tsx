@@ -7,15 +7,15 @@ import { HistoryContext } from '../context'
 import { IContent } from '../types'
 
 const Section = styled.section`
-  background: ${Theme.Colors.grey}
-  font-size: ${Theme.Fonts.medium}
-  padding: 15px 10px
+  background: ${Theme.Colors.grey};
+  font-size: ${Theme.Fonts.medium};
+  padding: 15px 10px;
 `
 
 const List = styled.ul`
   margin: 0;
   padding: 0 0 0 20px;
-  list-style-type: square
+  list-style-type: square;
 `
 
 const Content: React.SFC<IContent> = ({title, pathname, children, className}) => {
@@ -45,9 +45,9 @@ const Content: React.SFC<IContent> = ({title, pathname, children, className}) =>
 }
 
 const StyledContent = styled(Content)`
-  padding: 0 10px
-  margin: 25px 0
-  text-align:left
+  padding: 0 10px;
+  margin: 25px 0;
+  text-align:left;
 `
 
 export { StyledContent }

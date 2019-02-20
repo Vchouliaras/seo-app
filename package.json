@@ -12,6 +12,7 @@
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-preset-react-app": "^7.0.1",
     "bfj": "6.1.1",
+    "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^0.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
@@ -118,6 +119,10 @@
     ]
   },
   "babel": {
+    "plugins": [
+      ["@quickbaseoss/babel-plugin-styled-components-css-namespace"],
+      ["babel-plugin-styled-components"]
+    ],
     "presets": [
       "react-app"
     ]
@@ -127,6 +132,7 @@
     "@types/node": "^11.9.3",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
-    "@types/styled-components": "^4.1.10"
+    "@types/styled-components": "^4.1.10",
+    "babel-plugin-styled-components": "^1.10.0"
   }
 }

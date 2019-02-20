@@ -7,7 +7,7 @@ import { ICase } from '../types'
 const List = styled.ul`
   margin: 0;
   padding: 0 0 0 20px;
-  list-style-type: square
+  list-style-type: square;
 `
 
 const Home: React.SFC<ICase> = ({ location }) => {

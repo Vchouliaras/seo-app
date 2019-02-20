@@ -6,19 +6,19 @@ import { ICase } from '../types'
 import * as Theme from '../theme'
 
 const Button = styled.button`
-  background-color: ${Theme.Colors.blue}
-  color: ${Theme.Colors.white}
-  font-size: ${Theme.Fonts.large}
-  max-width: 250px
-  padding: 20px
-  border: none
-  cursor: pointer
-  transition: all .2s linear
-  border: 2px solid ${Theme.Colors.white}
+  background-color: ${Theme.Colors.blue};
+  color: ${Theme.Colors.white};
+  font-size: ${Theme.Fonts.large};
+  max-width: 250px;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s linear;
+  border: 2px solid ${Theme.Colors.white};
   :hover {
-    background-color: ${Theme.Colors.white}
-    border-color: ${Theme.Colors.blue}
-    color: ${Theme.Colors.blue}
+    background-color: ${Theme.Colors.white};
+    border-color: ${Theme.Colors.blue};
+    color: ${Theme.Colors.blue};
   }
 `
 

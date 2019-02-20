@@ -15,9 +15,9 @@ import Photo3 from '../assets/photo-hd-3mb.jpg'
 import Photo4 from '../assets/photo-hd-2mb-2.jpg'
 
 const Image = styled.img`
-  max-width: 100%
-  padding: 10px 0
-  border: 1px solod ${Theme.Colors.grey}
+  max-width: 100%;
+  padding: 10px 0;
+  border: 1px solod ${Theme.Colors.grey};
 `
 
 const Case5: React.SFC<ICase> = ({ location }) => {

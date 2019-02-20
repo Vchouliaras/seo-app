@@ -22,18 +22,18 @@ const Loader: React.SFC<ILoader> = ({className}) => {
 }
 
 const StyledLoader = styled(Loader)`
-  display: flex
-  justify-content: center
-  align-items: center
-  position: fixed
-  height: 100%
-  width: 100%
-  top: 0
-  left: 0
-  background: ${Theme.Colors.blue}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: ${Theme.Colors.blue};
   .timer {
-    font-size: ${Theme.Fonts.xxlarge}
-    color: ${Theme.Colors.white}
+    font-size: ${Theme.Fonts.xxlarge};
+    color: ${Theme.Colors.white};
   }
 `
 
