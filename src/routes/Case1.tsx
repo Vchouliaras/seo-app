@@ -5,7 +5,7 @@ import { StyledLoader as Loader } from '../components/Loader'
 import { API_URL } from '../constants'
 import { ICase } from '../types'
 
-const getPosts = async (): Promise<[]> => {
+const getContent = async (): Promise<[]> => {
   const response = await fetch(API_URL, { method: 'GET' })
   const data = await response.json()
 
@@ -14,12 +14,12 @@ const getPosts = async (): Promise<[]> => {
 
 const Case1: React.SFC<ICase> = ({ location }) => {
 
-  const [posts, setPosts] = React.useState([])
+  const [content, setContent] = React.useState(null)
   React.useEffect(() => {
-    getPosts().then(data => setPosts(data))
+    getContent().then(data => setContent(data))
   }, [])
 
-  if (!posts.length) {
+  if (!content) {
     return <Loader />
   }
 
@@ -28,15 +28,9 @@ const Case1: React.SFC<ICase> = ({ location }) => {
       title={'Case 1 - Ajax Call'}
       pathname={location.pathname}
     >
-    <h1>Perform an Ajax call with a loader</h1>
-    {
-      posts.map(post => (
-        <div key={post.id}>
-          <h4> {post.title} </h4>
-          <p> {post.body} </p>
-        </div>
-      ))
-    }
+      <h1>Perform an Ajax call with a loader</h1>
+      <h4> {content.title} </h4>
+      <p> {content.body} </p>
     </Content>
   )
 }
