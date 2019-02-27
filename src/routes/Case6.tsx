@@ -7,7 +7,7 @@ const Case6: React.SFC<ICase> = ({ location }) => {
 
   return (
     <Content
-      title={`Case6 - Dummy page not in sitemap.xml`}
+      title={`Case6 - Dummy page not in sitemap.xml - Prerender.io`}
       pathname={location.pathname}
     >
     <h1> {'Dummy page not in sitemap.xml'} </h1>

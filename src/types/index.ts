@@ -4,9 +4,7 @@ export interface IColors {
   [key: string]: string
 }
 
-export interface IFonts extends IColors {
-
-}
+export interface IFonts extends IColors {}
 
 export interface ILoader {
   children?: React.ReactChild
@@ -29,10 +27,9 @@ export interface ICase {
     status: number
   },
   location: {
-    pathname: string
+    pathname: string,
+    state?: {
+      referrer?: string
+    }
   }
-}
-
-export interface IAppState {
-  history: Array<string>
 }

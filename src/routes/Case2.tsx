@@ -4,7 +4,13 @@ import { StyledContent as Content } from '../components/Content'
 import { StyledLoader as Loader } from '../components/Loader'
 import { ICase } from '../types'
 
-const TIMEOYT_DELAY = 21000
+const TIMEOYT_DELAY = 10000
+
+// function HOLA() {
+//   for (let index = 0; index < 12000; index++) {
+//     console.log(' index -> ', index)
+//   }
+// }
 
 const Case2: React.SFC<ICase> = ({ location }) => {
 
@@ -17,13 +23,21 @@ const Case2: React.SFC<ICase> = ({ location }) => {
     }), TIMEOYT_DELAY)
   }, [])
 
+  function HOLA() {
+    for (let index = 0; index < 20000; index++) {
+      console.log(' index -> ', index)
+    }
+  }
+
+  HOLA()
+
   if (!data.heading || !data.content) {
     return <Loader />
   }
 
   return (
     <Content
-      title={`Case 2 - setTimeout delay at ${TIMEOYT_DELAY / 1000}s`}
+      title={`Case 2 - setTimeout delay at ${TIMEOYT_DELAY / 1000}s - Prerender.io`}
       pathname={location.pathname}
     >
     <h1> {data.heading} </h1>

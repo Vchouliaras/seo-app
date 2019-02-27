@@ -11,8 +11,23 @@
 
       gtag('config', 'UA-38633711-4');
     </script>
+    <script>
+      // Hack to force styled components to render styles during prerender for googlebot
+      window.onload = () => {
+        var el = document.createElement('style');
+        document.head.appendChild(el)
+        var styles = document.querySelectorAll('style[data-styled]')
+        for (style of styles.values()) {
+          for (rule of style.sheet.rules) {
+            el.appendChild(document.createTextNode(rule.cssText))
+          }
+        }
+      };
+     </script>
+
 
     <meta charset="utf-8" />
+    <meta name="prerender-status-code" content="404" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta
       name="viewport"

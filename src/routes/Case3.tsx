@@ -28,7 +28,7 @@ const Home: React.SFC<ICase> = ({ location }) => {
 
   return (
     <Content
-      title={`Case3 - Adding a CTA - Clicked ${counter} times`}
+      title={`Case3 - Adding a CTA - Clicked ${counter} times - Prerender.io`}
       pathname={location.pathname}
     >
     <h1> {`Adds a CTA to check for Bot\'s interactions - Clicked ${counter} times`} </h1>

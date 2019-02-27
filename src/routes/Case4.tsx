@@ -3,16 +3,23 @@ import * as React from 'react'
 import { StyledContent as Content } from '../components/Content'
 import { ICase } from '../types'
 
-const Case4: React.SFC<ICase> = ({ location }) => {
+import { Redirect } from 'react-router'
+import { Helmet } from 'react-helmet'
 
+const Case4: React.SFC<ICase> = () => {
   return (
-    <Content
-      title={`Case4 - This page will be remove soon`}
-      pathname={location.pathname}
-    >
-    <h1> {'This page will be remove soon'} </h1>
-    <p> {'This page will be redirected to not-found page with a proper 404 code, also is will not be included on the sitemap.xml '} </p>
-    </Content>
+    <React.Fragment>
+      <Helmet>
+        <meta name="prerender-status-code" content="301" />
+        <meta name="prerender-header" content="Location: /"></meta>
+      </Helmet>
+      <Content
+        title={`Case4 - Prerender.io - This page will be redirected to Home`}
+        pathname={location.pathname}
+      >
+      <h1> {'This page will be redirected to Home page with a proper 301 code'} </h1>
+      </Content>
+    </React.Fragment>
   )
 }
 

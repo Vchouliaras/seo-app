@@ -42,6 +42,7 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
+    "prerender-node": "^3.2.1",
     "react": "^16.8.1",
     "react-app-polyfill": "^0.2.1",
     "react-dev-utils": "^7.0.3",
@@ -67,7 +68,8 @@
     "build:app": "node scripts/build.js",
     "test:app": "node scripts/test.js",
     "build:server": "NODE_ENV=production ./node_modules/.bin/webpack --config ./config/webpack.config.server.js --progress --display-error-details --display-entrypoints",
-    "start:server": "NODE_ENV=production node server/index.js"
+    "start:server": "NODE_ENV=production node server/index.js",
+    "start:prerender": "NODE_ENV=production node server/prerenderServer.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -139,9 +141,10 @@
   "devDependencies": {
     "@types/jest": "^24.0.4",
     "@types/node": "^11.9.3",
-    "@types/react": "^16.8.3",
+    "@types/react": "^16.8.1",
     "@types/react-dom": "^16.8.1",
     "@types/styled-components": "^4.1.10",
+    "prerender": "^5.5.1",
     "webpack-cli": "^3.2.3"
   }
 }

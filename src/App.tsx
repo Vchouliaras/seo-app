@@ -22,6 +22,7 @@ const PageNav = () => (
       <Link to="/case4">Case 4</Link>
       <Link to="/case5">Case 5</Link>
       <Link to="/case6">Case 6</Link>
+      <Link to="/case7">Case 7</Link>
     </Navigation>
   </React.Fragment>
 )
@@ -42,7 +43,9 @@ const App = () => {
           <Route path='/case4' component={Cases.Case4} />
           <Route path='/case5' component={Cases.Case5} />
           <Route path='/case6' component={Cases.Case6} />
-          <Route component={Cases.NotFound} />
+          <Route path='/case7' component={Cases.Case7} />
+          <Route path='/not-found' component={Cases.NotFound} />
+          <Route render={() => <Redirect to="/not-found" /> } />
         </Switch>
       </HistoryContext.Provider>
     </React.Fragment>

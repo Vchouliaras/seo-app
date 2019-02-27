@@ -5,6 +5,7 @@ import Case3 from './Case3'
 import Case4 from './Case4'
 import Case5 from './Case5'
 import Case6 from './Case6'
+import Case7 from './Case7'
 import NotFound from './NotFound'
 
 export {
@@ -15,5 +16,6 @@ export {
   Case4,
   Case5,
   Case6,
+  Case7,
   NotFound,
 }

@@ -25,10 +25,10 @@ const Case1: React.SFC<ICase> = ({ location }) => {
 
   return (
     <Content
-      title={'Case 1 - Ajax Call'}
+      title={'Case 1 - Ajax Call - Prerender.io'}
       pathname={location.pathname}
     >
-      <h1>Perform an Ajax call with a loader</h1>
+      <h1>Perform a delayed Ajax call with a loader</h1>
       <h4> {content.title} </h4>
       <p> {content.body} </p>
     </Content>

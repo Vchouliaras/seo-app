@@ -24,7 +24,7 @@ const Case5: React.SFC<ICase> = ({ location }) => {
 
   return (
     <Content
-      title={`Case5 - Heavy HTML images`}
+      title={`Case5 - Heavy HTML images - Prerender.io`}
       pathname={location.pathname}
     >
       <h1> {'Contains heavy images ~6MB in total'} </h1>

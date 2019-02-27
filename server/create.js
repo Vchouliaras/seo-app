@@ -1,6 +1,8 @@
 import path from 'path'
 import fs from 'fs'
+
 import express from 'express'
+import prerenderNode from 'prerender-node'
 
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
@@ -19,11 +21,10 @@ const appBuildPath = path.resolve(fs.realpathSync(process.cwd()), './build')
 // point to the html file created by CRA's build tool
 const appBuildIndex = `${appBuildPath}/index.html`
 
-app.use('/static', express.static(`${appBuildPath}/static`))
-
 const renderer = (req, res, next) => {
 
   fs.readFile(appBuildIndex, 'utf8', (err, htmlData) => {
+
     if (err) {
       console.error('Something went wrong:', err)
       return res.status(500).send('Oops, better luck next time!')
@@ -44,7 +45,7 @@ const renderer = (req, res, next) => {
     // If SSR finds a React Router Redirect component
     // the context.url is set
     if (context.url) {
-      return res.redirect(301, context.url);
+      return res.redirect(308, context.url);
     }
 
     // Get styles from styled-componets
@@ -70,15 +71,19 @@ const renderer = (req, res, next) => {
   })
 }
 
+// Server static assets
+app.use(express.static(`${appBuildPath}`))
+
 // Deliberately add a delay for /content call
 app.use('/content', (req, res, next) => setTimeout(next, 21000))
 
-app.get('*', (req, res, next) => {
+// Use prerender.io for Dynamic Rendering
+app.use(prerenderNode
+  // .set('prerenderServiceUrl', 'http://localhost:3000/')
+  .set('prerenderToken', 'hJeivm0YSAgXlycRNH8L')
+)
 
-  // Ignore those cases for now, will use prerender.io
-  if (/\/case(4|5|6)/ig.test(req.url)) {
-    return res.sendFile(appBuildIndex)
-  }
+app.get('*', (req, res) => {
 
   if (req.url === '/content') {
     return res.json({
@@ -87,10 +92,11 @@ app.get('*', (req, res, next) => {
     })
   }
 
-  renderer(req, res)
+  return res.sendFile(appBuildIndex)
 })
 
-app.listen(PORT, (error) => {
+
+app.listen(PORT, error => {
   if (error) {
     return console.log(`Something went wrong: ${error}`)
   }
