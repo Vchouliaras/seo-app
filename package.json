@@ -1,6 +1,6 @@
 {
   "name": "seo-app",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
@@ -64,6 +64,7 @@
   },
   "scripts": {
     "patch": "yarn version --patch",
+    "minor": "yarn version --minor",
     "start:app": "node scripts/start.js",
     "build:app": "node scripts/build.js",
     "test:app": "node scripts/test.js",
