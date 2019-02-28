@@ -6,12 +6,6 @@ import { ICase } from '../types'
 
 const TIMEOYT_DELAY = 10000
 
-// function HOLA() {
-//   for (let index = 0; index < 12000; index++) {
-//     console.log(' index -> ', index)
-//   }
-// }
-
 const Case2: React.SFC<ICase> = ({ location }) => {
 
   const [data, setData] = React.useState({heading: '', content: ''})
@@ -22,14 +16,6 @@ const Case2: React.SFC<ICase> = ({ location }) => {
       content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`
     }), TIMEOYT_DELAY)
   }, [])
-
-  function HOLA() {
-    for (let index = 0; index < 20000; index++) {
-      console.log(' index -> ', index)
-    }
-  }
-
-  HOLA()
 
   if (!data.heading || !data.content) {
     return <Loader />

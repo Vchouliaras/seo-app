@@ -16,7 +16,11 @@ const app = express()
 
 const PORT =  process.env.PORT || 1111
 
-const appBuildPath = path.resolve(fs.realpathSync(process.cwd()), './build')
+
+const appBuildPath = process.env.NODE_ENV === 'development'
+    ? path.resolve(fs.realpathSync(process.cwd()), './build')
+    : path.resolve(fs.realpathSync(process.cwd()), '../public_html')
+
 
 // point to the html file created by CRA's build tool
 const appBuildIndex = `${appBuildPath}/index.html`
@@ -78,10 +82,10 @@ app.use(express.static(`${appBuildPath}`))
 app.use('/content', (req, res, next) => setTimeout(next, 21000))
 
 // Use prerender.io for Dynamic Rendering
-app.use(prerenderNode
-  // .set('prerenderServiceUrl', 'http://localhost:3000/')
-  .set('prerenderToken', 'hJeivm0YSAgXlycRNH8L')
-)
+if (process.env.NODE_ENV === 'development') {
+  prerenderNode.set('prerenderServiceUrl', 'http://localhost:3000/')
+}
+app.use(prerenderNode.set('prerenderToken', 'hJeivm0YSAgXlycRNH8L'))
 
 app.get('*', (req, res) => {
 

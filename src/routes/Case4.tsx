@@ -14,10 +14,10 @@ const Case4: React.SFC<ICase> = () => {
         <meta name="prerender-header" content="Location: /"></meta>
       </Helmet>
       <Content
-        title={`Case4 - Prerender.io - This page will be redirected to Home`}
+        title={`Case4 - Prerender.io - This page will be redirected to Home for Google Bots`}
         pathname={location.pathname}
       >
-      <h1> {'This page will be redirected to Home page with a proper 301 code'} </h1>
+      <h1> {'This page will be redirected to Home page with a proper 301 code for Google Bots'} </h1>
       </Content>
     </React.Fragment>
   )
