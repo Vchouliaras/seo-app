@@ -16,7 +16,6 @@ const app = express()
 
 const PORT =  process.env.PORT || 1111
 
-
 const appBuildPath = process.env.NODE_ENV === 'development'
     ? path.resolve(fs.realpathSync(process.cwd()), './build')
     : path.resolve(fs.realpathSync(process.cwd()), '../public_html')
@@ -76,7 +75,9 @@ const renderer = (req, res, next) => {
 }
 
 // Server static assets
-app.use(express.static(`${appBuildPath}`))
+// Do not server index.html by default
+// when requesting for a directory (like "/")
+app.use(express.static(`${appBuildPath}`, { index: false }))
 
 // Deliberately add a delay for /content call
 app.use('/content', (req, res, next) => setTimeout(next, 21000))
