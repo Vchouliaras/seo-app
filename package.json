@@ -69,8 +69,7 @@
     "build:app": "node scripts/build.js",
     "test:app": "node scripts/test.js",
     "build:server:prod": "NODE_ENV=production ./node_modules/.bin/webpack --config ./config/webpack.config.server.js --progress --display-error-details --display-entrypoints --mode=production",
-    "build:server:dev": "NODE_ENV=development ./node_modules/.bin/webpack --config ./config/webpack.config.server.js --progress --display-error-details --display-entrypoints  --mode=development",
-    "start:server": "node server/index.js",
+    "start:server:dev": "NODE_ENV=development ./node_modules/.bin/webpack --config ./config/webpack.config.server.js --progress --display-error-details --display-entrypoints  --watch --mode=development",
     "start:prerender": "node server/prerenderServer.js",
     "deploy": "yarn build:app && \\cp -ru build/* ../public_html/ && yarn build:server:prod && pm2 restart server/index.js"
   },
@@ -147,6 +146,7 @@
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.8.1",
     "@types/styled-components": "^4.1.10",
+    "nodemon-webpack-plugin": "^4.0.8",
     "prerender": "^5.5.1",
     "webpack-cli": "^3.2.3"
   }

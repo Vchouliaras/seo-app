@@ -1,4 +1,5 @@
 const nodeExternals = require('webpack-node-externals')
+const NodemonPlugin = require( 'nodemon-webpack-plugin' )
 const path = require('path')
 
 module.exports = {
@@ -36,5 +37,8 @@ module.exports = {
         loader: 'url-loader?emitFile=false'
       }
     ]
-  }
+  },
+  plugins: [
+    new NodemonPlugin(), // Dong
+  ],
 }
